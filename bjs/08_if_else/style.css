@@ -1,3 +1,23 @@
+body { 
+    background: antiquewhite;
+}
+
+button {
+    color: black
+}
+
+/* .card-body {
+    background-color:; 
+} */
+
+/* .card-header {
+    background-color: 
+} */
+
+.card-footer {
+    background-color: rgb(50, 83, 102);
+}
+
 .game-card {
     height: 100vh;
     font-family: 'Open Sans', monospace;
