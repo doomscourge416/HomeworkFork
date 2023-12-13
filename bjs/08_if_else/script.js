@@ -1,16 +1,53 @@
 
-// let minValue
-// let maxValue
+// let minValue = document.querySelector('#inputMin',(input){
+    // minValue = input.value
+// });
+// let maxValue = document.querySelector('#inputMax');
 // let otpavitCifri = document.querySelector('#minMaxSubmit')
 
-// // otpavitCifri.addEventListener('click',function(){
+// // otpavitCifri.addEventListener('mousedown',function(){
     
 // //     gameRun = true
 // // } )
 
 
+// document.querySelector('#minMaxSubmit', (click) => {
+
+//     document.querySelector('#inputMin', (input) => {
+//         let minValue = input.textContent
+//     })
+
+//     document.querySelector('#inputMax', (input) => {
+//         let maxValue = input.textContent
+//     })
+
+// })
+
+
+
+// let minValue 
+// let maxValue
+
+
+
+// document.addEventListener('#minMaxSubmit', (click) => {
+
+//     document.querySelector('#inputMin').value = minValue
+//     document.querySelector('#inputMax').value = maxValue
+    
+
+// })
+
+
+
+
+
+
+
+
 let minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
 let maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
+
 
 if(isNaN(minValue)) minValue = 0 ;
 if(isNaN(maxValue)) maxValue = 100 ;
