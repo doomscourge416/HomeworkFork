@@ -78,7 +78,7 @@ const personGenerator = {
             "id_9": "Продавец"
         }
     }`,
-    patronymicJson: `{
+    /*patronymicJson: `{
         "count": 9,
         "list": {     
             "id_1": "Александров",
@@ -91,7 +91,7 @@ const personGenerator = {
             "id_8": "Даниилов",
             "id_9": "Андреев"
         }
-    }`,
+    }`,*/
     months:`{
         "count": 12,
         "list": {
@@ -181,11 +181,11 @@ const personGenerator = {
     },
 
 
-    randomPatronymic: function(){
+    /*randomPatronymic: function(){
 
         return this.randomValue(this.patronymicJson);
 
-    },
+    },*/
 
 
     randomGender: function(){
@@ -259,7 +259,30 @@ const personGenerator = {
         if (this.person.gender === this.GENDER_FEMALE){
 
             this.person.surname = this.randomSurname() + "а";
-            this.person.patronymic = this.randomPatronymic() + "на";
+            let randomPatronymic = this.randomFirstNameMale();
+
+            if (randomPatronymic.slice(-2) === "ий"){
+
+                this.person.patronymic = randomPatronymic.replace("ий", "иевна")
+
+            } else if (randomPatronymic.slice(-2) === "ей"){
+
+                this.person.patronymic = randomPatronymic.replace("ей", "еевна")
+
+            } else if (randomPatronymic.slice(-2) === "ил"){
+
+                this.person.patronymic = randomPatronymic.replace("ил", "иловна")
+
+            } else if (randomPatronymic.slice(-3) === "ита"){
+
+                this.person.patronymic = randomPatronymic.replace("ита", "итична")
+
+            } else {
+
+                this.person.patronymic = randomPatronymic + "овна";
+
+            };
+
             this.person.firstName = this.randomFirstNameFemale();
             this.person.job = this.randomFemaleJob();
             
@@ -268,7 +291,26 @@ const personGenerator = {
 
             this.person.surname = this.randomSurname();
             this.person.firstName = this.randomFirstNameMale();
-            this.person.patronymic = this.randomPatronymic() + "ич";
+            let randomPatronymic = this.randomFirstNameMale();
+
+            if (randomPatronymic.slice(-2) === "ий"){
+
+                this.person.patronymic = randomPatronymic.replace("ий", "иевич")
+
+            } else if (randomPatronymic.slice(-2) === "ей"){
+
+                this.person.patronymic = randomPatronymic.replace("ей", "еевич")
+
+            } else if (randomPatronymic.slice(-3) === "ита"){
+
+                this.person.patronymic = randomPatronymic.replace("ита", "итич")
+
+            } else {
+
+                this.person.patronymic = randomPatronymic + "ович";
+                
+            };
+
             this.person.job = this.randomMaleJob();
         
         
